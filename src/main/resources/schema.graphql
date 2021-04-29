@@ -1,0 +1,23 @@
+type ReviewDto {
+	reviewId: String
+    reviewName: String
+    dueForReview: String
+    frequency: String
+    reviewType: String
+    lastUpdated: String
+}
+
+type Query {
+    reviewList(criteria: Criteria) : [ReviewDto]
+}
+
+input Criteria {
+    pageNumber: String
+    pageSize: String
+    sort: Sort
+}
+
+input Sort {
+  direction: String
+  sortBy: String
+}
